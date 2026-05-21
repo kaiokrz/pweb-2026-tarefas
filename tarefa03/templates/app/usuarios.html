@@ -8,6 +8,11 @@
 <body>
     <h2>Usuários:</h2>
     {% for usuario in usuarios %}
-    <p></p>
+    <p>Nome: {{ usuario.nome }}</p>
+    <p>Idade: {{usuario.idade }}</p>
+    <p>Matrícula: {{usuario.matricula }}</p>
+    <p>Cidade: {{usuario.cidade }}</p>
+    <br>
+    {% endfor %}
 </body>
 </html>
