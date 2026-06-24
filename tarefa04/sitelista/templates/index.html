@@ -6,6 +6,19 @@
     <title>Lista de Tarefas</title>
 </head>
 <body>
-    a 
+    <h1>Lista de Tarefas</h1>
+    <ul>
+        {% for x in Tarefa %}
+        <li>{{x.nome}}</li>
+        <li>{{x.status}}</li>
+        <li>{{x.prazo}}</li>
+        <li>{{if x.prazo < hoje}}
+            Atrasado</li>
+        <li>{{else}}
+            <b>Atrasado</b></li>
+            {{endif}}
+        {%endfor%}
+
+    </ul>
 </body>
 </html>
