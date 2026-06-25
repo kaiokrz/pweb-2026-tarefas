@@ -6,19 +6,20 @@
     <title>Lista de Tarefas</title>
 </head>
 <body>
-    <h1>Lista de Tarefas</h1>
+<h1>Lista de Tarefas</h1>
     <ul>
-        {% for x in Tarefa %}
-        <li>{{x.nome}}</li>
-        <li>{{x.status}}</li>
-        <li>{{x.prazo}}</li>
-        <li>{{if x.prazo < hoje}}
-            Atrasado</li>
-        <li>{{else}}
-            <b>Atrasado</b></li>
-            {{endif}}
-        {%endfor%}
-
+        {% for x in tarefas %}
+            <li><strong>Nome:</strong> {{ x.nome }}</li>
+            <li><strong>Status:</strong> {{ x.status }}</li>
+            <li><strong>Prazo:</strong> {{ x.prazo }}</li>
+            
+            {% if x.prazo < hoje %}
+                <li><b>Atrasado</b></li>
+            {% else %}
+                <li>Em dia</li>
+            {% endif %}
+            
+            <hr> {% endfor %}
     </ul>
 </body>
 </html>
