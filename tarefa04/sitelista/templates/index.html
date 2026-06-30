@@ -13,7 +13,7 @@
             <li><strong>Status:</strong> {{ x.status }}</li>
             <li><strong>Prazo:</strong> {{ x.prazo }}</li>
             
-            {% if x.prazo < hoje %}
+            {% if x.prazo < hoje and x.status == False%}
                 <li><b>Atrasado</b></li>
             {% else %}
                 <li>Em dia</li>
