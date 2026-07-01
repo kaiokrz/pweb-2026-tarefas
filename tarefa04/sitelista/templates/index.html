@@ -10,14 +10,14 @@
     <ul>
         {% for x in tarefas %}
             <li><strong>Nome:</strong> {{ x.nome }}</li>
-            <li><strong>Status:</strong> {{ x.status }}</li>
-            <li><strong>Prazo:</strong> {{ x.prazo }}</li>
-            
-            {% if x.prazo < hoje and x.status == False%}
-                <li><b>Atrasado</b></li>
-            {% else %}
-                <li>Em dia</li>
-            {% endif %}
+            <li><strong>Status:</strong>{% if x.status == True%}Concluído {% else %}Não concluído{% endif %}</li>
+            <li><strong>Prazo:</strong> {{x.prazo}}</li>
+            <strong>Situação:</strong> 
+                {% if x.prazo < hoje and not x.status %}
+                    <b style="color: red;">Atrasado</b>
+                {% else %}
+                    <span style="color: green;">Em dia</span>
+                {% endif %}
             
             <hr> {% endfor %}
     </ul>
