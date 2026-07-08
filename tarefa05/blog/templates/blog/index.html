@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu blog</title>
-</head>
-<body>
-    {% extends "blog/base.html" %}
-    {% block "title"%}Inicio{% endblock %}
-    {% block "content" %}
-    <h1>Meu blog, minha vida</h1>
-    {% endblock %}
-</body>
-</html>
+{% extends 'blog/base.html' %}
+{% block content %}
+    <h1>Últimos Posts</h1>
+    {% for post in postagis %}
+            <h2>{{ post.titulo }}</h2>
+            <img src="{{ post.foto.url }}" alt="img post {{post.nome}}">
+            <h3><a href="{% url 'post' post.id %}">Confira</a></h3>
+            <h3>{{ post.data|date:"d/m/Y" }}</h3>
+        <hr>
+    {% endfor %}
+{% endblock %}
