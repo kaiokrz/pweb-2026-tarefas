@@ -3,7 +3,7 @@
     <h1>Últimos Posts</h1>
     {% for post in postagis %}
             <h2>{{ post.titulo }}</h2>
-            <img src="{{ post.foto.url }}" alt="img post {{post.nome}}">
+            <img src="{{ post.foto.url }}" alt="img post {{post.nome}}" width="500px">
             <h3><a href="{% url 'post' post.id %}">Confira</a></h3>
             <h3>{{ post.data|date:"d/m/Y" }}</h3>
         <hr>

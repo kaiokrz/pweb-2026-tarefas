@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% block title %}{{ post.titulo }}{% endblock %}
+{% block content %}
+
+<h1>{{ post.titulo}}</h1>
+<img src="{{ post.foto.url }}">
+<h3>{{ post.texto|safe }}</h3>
+<h4>{{ post.data }}</h4>
+<a href="{% url 'index' %}"><h4>Ver mais notícia</h4></a>
+
+{% endblock %}
